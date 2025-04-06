@@ -3,7 +3,7 @@ const app = express()
 const dotenv = require("dotenv")
 const cors = require("cors")
 const KafkaConfig  = require("./config/kafkaConfig")
-dotenv.config()
+dotenv.config() 
 const Port = process.env.PORT || 8000
 app.use(cors({
    allowedHeaders: ["*"],

@@ -4,18 +4,18 @@ const path = require("path")
 
 class KafkaConfig {
    constructor(){
-        this.kafka = new Kafka({
-               clientId: "youtube_uploader_service",
-               brokers: [process.env.KAFKA_SERVICE_URI],
-               ssl: {
-                   ca: [fs.readFileSync(path.resolve("./ca.pem"), "utf-8")]
-               },
-               sasl: {
-                   username:process.env.KAKA_USER ,
-                   password: process.env.KAFKA_PASSWORD,
-                   mechanism: "plain"
-               }
-           })
+     this.kafka = new Kafka({
+              clientId: "youtube_uploader_service",
+              brokers: [process.env.KAFKA_SERVICE_URI],
+              ssl: {
+                  ca: [fs.readFileSync(path.resolve("./ca.pem"), "utf-8")]
+              },
+              sasl: {
+                  username:process.env.KAKA_USER ,
+                  password: process.env.KAFKA_PASSWORD,
+                  mechanism: "plain"
+              }
+          })
        this.producer = this.kafka.producer()
     //    this.consumer = this.kafka.consumer({groupId: "youtube-uploader"})
    }
